@@ -336,3 +336,30 @@ input {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+.quick-select {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.quick-select button {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  background: rgba(124, 58, 237, 0.08);
+  color: #d8b4fe;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.quick-select button:hover {
+  background: rgba(124, 58, 237, 0.16);
+  border-color: rgba(124, 58, 237, 0.6);
+}
+
+.quick-select button:active {
+  transform: scale(0.98);
+}

@@ -22,9 +22,9 @@ function App() {
       setCharacterData(null);
 
       const response = await fetch(
-       `https://maplestoryapi.onrender.com/character/${encodeURIComponent(characterName)}/profile`
-        
-    
+        `https://maplestoryapi.onrender.com/character/${encodeURIComponent(characterName)}/profile`
+
+
       );
 
       if (!response.ok) {
@@ -74,8 +74,13 @@ function App() {
               {loading ? "查詢中..." : "查詢"}
             </button>
           </div>
+
           {error && <div className="error-banner">{error}</div>}
         </div>
+      </div>
+      <div className="quick-select">
+        <span>範例角色：</span>
+        <button onClick={() => setCharacterName("埃豆")}>埃豆</button>
       </div>
 
       {characterData && (
@@ -186,7 +191,7 @@ function App() {
                 <p className="eyebrow">裝備</p>
                 <h2>裝備預設切換</h2>
               </div>
-          
+
             </div>
 
             <div className="equipment-grid">
