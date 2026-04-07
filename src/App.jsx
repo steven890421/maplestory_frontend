@@ -22,7 +22,9 @@ function App() {
       setCharacterData(null);
 
       const response = await fetch(
-        `http://localhost:8080/character/${encodeURIComponent(characterName)}/profile`
+       `https://maplestoryapi.onrender.com/character/${encodeURIComponent(characterName)}/profile`
+        
+    
       );
 
       if (!response.ok) {
@@ -31,8 +33,8 @@ function App() {
       const res = await response.json();
       setCharacterData(res.data);
       console.log("API 回傳資料：", res);
-      console.log("角色資料：", res.data.basic);
-      console.log("裝備資料：", res.data.equipment);
+      console.log("角色資料：", res.basic);
+      console.log("裝備資料：", res.equipment);
     } catch (err) {
       setError("查不到角色資料，或後端發生錯誤");
       setCharacterData(null);
@@ -182,7 +184,7 @@ function App() {
             <div className="equipment-header">
               <div>
                 <p className="eyebrow">裝備</p>
-                
+                <h2>裝備預設切換</h2>
               </div>
           
             </div>
