@@ -29,10 +29,10 @@ function App() {
         throw new Error("查詢失敗");
       }
       const res = await response.json();
-      setCharacterData(res);
+      setCharacterData(res.data);
       console.log("API 回傳資料：", res);
-      console.log("角色資料：", res.basic);
-      console.log("裝備資料：", res.equipment);
+      console.log("角色資料：", res.data.basic);
+      console.log("裝備資料：", res.data.equipment);
     } catch (err) {
       setError("查不到角色資料，或後端發生錯誤");
       setCharacterData(null);
